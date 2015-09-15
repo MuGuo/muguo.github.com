@@ -1,102 +1,387 @@
-ï»¿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>æˆ‘çˆ±å­™é¢–è±ª</title>
+<title>Mrbelle  bootstrap website Template| Home :: w3layouts</title>
+<link href="./css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="./css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="./css/demo.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="./css/sticky-navigation.css" />
+<!------ js ------>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/responsiveslides.min.js"></script>
+<!------ js ------>
+<!---- start-smoth-scrolling---->
+		<script type="text/javascript" src="./js/move-top.js"></script>
+		<script type="text/javascript" src="./js/easing.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+		</script>
+<!---- start-smoth-scrolling---->
+<script>
+$(function() {
 
-<style type="text/css">
-@font-face {
-	font-family: digit;
-	src: url('digital-7_mono.ttf') format("truetype");
-}
-</style>
+	// grab the initial top offset of the navigation 
+	var sticky_navigation_offset_top = $('#sticky_navigation').offset().top;
+	
+	// our function that decides weather the navigation bar should have "fixed" css position or not.
+	var sticky_navigation = function(){
+		var scroll_top = $(window).scrollTop(); // our current vertical position from the top
+		
+		// if we've scrolled more than the navigation, change its position to fixed to stick to top, otherwise change it back to relative
+		if (scroll_top > sticky_navigation_offset_top) { 
+			$('#sticky_navigation').css({ 'position': 'fixed', 'top':0, 'left':0 });
+		} else {
+			$('#sticky_navigation').css({ 'position': 'relative' }); 
+		}   
+	};
+	
+	// run our function on load
+	sticky_navigation();
+	
+	// and run it again every time you scroll
+	$(window).scroll(function() {
+		 sticky_navigation();
+	});
+	
+	// NOT required:
+	// for this demo disable all links that point to "#"
+	$('a[href="#"]').click(function(event){ 
+		event.preventDefault(); 
+	});
+	
+});
+</script>
 
-<link href="css/default.css" type="text/css" rel="stylesheet">
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/garden.js"></script>
-<script type="text/javascript" src="js/functions.js"></script>
+<!--- fonts --->
+<link href='http://fonts.googleapis.com/css?family=Lato:100,300italic,400,700,900,300italic,700italic,900italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,200,900,800,700,600,500,300,100' rel='stylesheet' type='text/css'>
+<!--- fonts --->
 
 </head>
-
 <body>
-
-<div id="mainDiv">
-	<div id="content">
-		<div id="code">
-			<span class="comments">/**</span><br />
-			<span class="space"/><span class="comments">*2015â€”07-30,</span><br />
-			<span class="space"/><span class="comments">*/</span><br />
-			Girl name = <span class="keyword">Mrs</span> Guo<br />
-			Boy name = <span class="keyword">Mr</span> Sun<br />
-			<span class="comments">// Fall in love river. </span><br />
-			The girl love the boy;<br />
-			<span class="comments">// They love each other.</span><br />
-			The boy loved the girl;<br />
-			<span class="comments">// AS time goes on.</span><br />
-			The girl can not be separated the boy;<br />
-			<span class="comments">// At the same time.</span><br />
-			The boy can not be separated the girl;<br />
-			<span class="comments">// Both wind and snow all over the sky.</span><br />
-			<span class="comments">// Whether on foot or 5 kilometers.</span><br />
-			<span class="keyword">The girl</span> very <span class="keyword">happy</span>;<br />
-			<span class="keyword">The boy</span> is also very <span class="keyword">happy</span>;<br />
-			<span class="placeholder"/><span class="comments">// Whether it is right now</span><br />
-			<span class="placeholder"/><span class="comments">// Still in the distant future.</span><br />
-			<span class="placeholder"/>The girl has but one dream;<br />
-			<span class="comments">// The boy wants the boy could well have been happy.</span><br />
-			<br>
-			<br>
-			I want to say:<br />
-			Baby, I love you forever;<br />
-		</div>
-		<div id="loveHeart">
-			<canvas id="garden"></canvas>
-			<div id="words">
-				<div id="messages">
-					äº²çˆ±çš„ï¼Œè¿™æ˜¯æˆ‘ä»¬ç›¸çˆ±åœ¨ä¸€èµ·çš„æ—¶å…‰ã€‚
-					<div id="elapseClock"></div>
-				</div>
-				<div id="loveu">
-					çˆ±ä½ ã€‚<br><br>
-					<div>from éƒ­è‰³ç‡•</div>
+<!---->
+<div id="demo_top_wrapper">
+	<div id="demo_top">
+			<div class="header" id="home">
+				<div class="logo">
+				<a href="#"><img src="./images/logo.png" alt=""/></a>
 				</div>
 			</div>
-		</div>
-	</div>
+		
+	 </div>
+	 <div id="sticky_navigation_wrapper">
+		 <div id="sticky_navigation">
+			  <div class="top-menu">
+				 <div class="container">
+						<a href="#home"><h4>MISS.GUO</h4></a>
+						<span class="menu"> </span>
+						<ul>
+						<li><a class="scroll" href="#about">Me</a></li>
+						<li><a href="./haohao.html">Mr.Sun</a></li>
+						<li><a href="#">travel</a></li>
+						<li><a href="#">food</a></li>
+						<a href="#"><span class="img1"> </span></a>
+						<a href="#"><span class="img2"> </span></a>
+						<a href="#"><span class="img3"> </span></a>				 
+						<div class="clearfix"></div>
+						</ul>
+					 <div class="clearfix"></div>
+				 </div>
+			  </div>
+		 </div>
+	 </div>
+</div>
+<!---->
+<section id="main">
+<div class="about" id="about">
+	 <h3>WELCOME TO MY WORLD</h3>
+	 <b></b>
+	 <div class="container">
+		 <div class="about-grids">
+			 <div class="col-md-6 about-info">		
+				 <h4>Short Story</h4>
+				  <label></label>
+				 <div class="row">
+					 <div class="col-md-4">
+						 <<img src="./images/me.jpg" alt="" height="180"/>
+						 </div>
+					 <div class="col-md-8">
+						 <p style="color: #364356">»¶Ó­À´µ½ÎÒµÄÊÀ½ç£¬ÎÒ½Ğ¹ùÑŞÑà¡£ÎÒÊÇÒ»¸öºÓ±±Å®º¢£¬»îÆÃ¿ªÀÊ£¬´óµ¨ÈÏÕæ¡£ÎÒÊÇÑ§¼ÆËã»úµÄ£¬ÎÒºÜÈÈ°®±à³Ì£¬Ò²Ï£Íû×Ô¼ºÒÔºó¿ÉÒÔ³ÉÎªÒ»ÃûÓÅĞãµÄ¹¤³ÌÊ¦¡£³ıÁËÊÂÒµ£¬ÎÒ»¹ÓĞĞí¶àÈÈ°®µÄÊÂÇé£¬±ÈÈçÂÃÓÎ£¬±ÈÈçÃÀÊ³¡£ºÃÀ²£¬Äã¿ÉÒÔÔÚÎÒµÄÊÀ½çËæ±ã¿´¿´£¬Èç¹ûÄãÏëºÍÎÒ½»ÅóÓÑ£¬Çë¸øÎÒ·¢ÓÊ¼ş£¬ÎÒµÄÓÊÏäÊÇlavender1995@qq.com¡£ºÜ¸ßĞËÈÏÊ¶Äã£¡</p>
+					 </div>
+					 </div>
+				 </div>
+			 <div class="col-md-6 about-skill">
+				 <h4>Skills</h4>
+				  <label></label>
+				  <p><i>keep learning</i></p>
+				  	<div class="skill-grid1">
+						 <div class="skill-bar">
+						 <div class="info"><p>javascript</p><i>70%</i></div>
+						 </div>
+						 <div class="icon"><img src="./images/skil.png"></div>
+						 <div class="clearfix"></div>
+					</div>
+				  	<div class="clearfix"></div>
+				  	<div class="skill-grid2">
+						 <div class="skill-bar2">
+							 <div class="info2"><p>java</p><i>90%</i></div>
+							 <div class="clearfix"></div>
+						 </div>
+						 <div class="icon"><img src="./images/skil.png"></div>
+						 <div class="clearfix"></div>
+					 </div>
+				  	<div class="clearfix"></div>
+				  	<div class="skill-grid3">
+						 <div class="skill-bar3">
+							 <div class="info3"><p>C++</p><i>40%</i></div>
+							 <div class="clearfix"></div>
+						 </div>
+						 <div class="icon"><img src="./images/skil.png"></div>
+						 <div class="clearfix"></div>
+					 </div>
+				  	<div class="clearfix"></div>
+				  	<div class="skill-grid3" style="margin-top: 13px">
+						<div class="skill-bar3">
+							<div class="info3"><p>Android</p><i>40%</i></div>
+							<div class="clearfix"></div>
+						</div>
+					 <div class="icon"><img src="./images/skil.png"></div>
+					 <div class="clearfix"></div>
+				    </div>
+				    <div class="clearfix"></div>
+			 </div>
+			 <div class="clearfix"></div>
+		 </div>			 
+	 </div>
+	  <a></a>
+</div>	
+<!---->
+<div class="blog" id="blog">
+	 <h3>Project</h3>
+	 <small></small>
+	 <h5 style="margin-top: 20px"><i>²»½öÊÇÈÈ°®</i></h5>
+	 <div class="container">	
+		 <div class="blog-top" id="top-sec">
+			 <div class="blog-img">
+				<img src="./images/img1.jpg" alt="" class="img-responsive" />
+			 </div>
+			 <div class="img-desc">
+				 <h4>ÄÁÄÁÄÌ³§¹ÜÀíÏµÍ³</h4>
+				 <span></span>
+				 <p>ÎÒËùĞ´µÄÕæÕıÒâÒåÉÏµÄÒ»¸öÍêÕûµÄ³ÌĞò£¬ÒÔjava×÷ÎªÆ½Ì¨£¬²ÉÓÃjavaFXĞŞÊÎ½çÃæ£¬MySQLÊı¾İ¿âÖ§³Ö¡£Ëü¹ÄÎèÁËÎÒÔÚ±à³ÌµÀÂ·ÉÏ×ßÏÂÈ¥</p>
+				 <span></span>
+				 <div class="icons">
+						<a href="#"><span class="img1"> </span></a>
+						<a href="#"><span class="img2"> </span></a>
+						<a href="#"><span class="img3"> </span></a>
+				   </div>
+					<a class="date" href="#">2014Äê</a>
+					<div class="caption">
+						<a href="#"><img src="./images/link.png" alt=""/></a>
+					</div>
+					<div class="dmnd"></div>				
+			 </div>
+		 </div>
+		 <div class="blog-top" id="top-sec">
+			 <div class="blog-img">
+				<img src="./images/img2.jpg" alt="" class="img-responsive" />
+			 </div>
+			 <div class="img-desc" >
+				 <h4>ÊıÑ§½¨Ä£</h4>
+				 <span></span>
+				 <p>ÊıÑ§½¨Ä£¶ÔÎÒÀ´Ëµ£¬¼ÈÊÇÌìÊ¹ÓÖÊÇ¶ñÄ§¡£Ã¿´Î½¨Ä£ÎÒ¶¼´¦ĞÄ»ıÂÇ£¬Ğ¡ĞÄÉè¼Æ£¬Ğ´ÂÛÎÄ¸üÊÇ×¥¶úÄÓÈù£¬¾«ĞÄ´ë´Ç¡£µ«ÊÇÃ¿´Î¿´µ½×Ô¼º¿ÉÒÔÓÃ±à³Ì½â¾öÊµ¼ÊÎÊÌâ¶¼¿ªĞÄ²»ÒÑ£¬ÓÈÆäÊÇÕâĞ©ÎÊÌâ¶¼ºÜ¸ß´óÉÏ£¬»ò¹ØÏµÃñÉú£¬»òÉî°ÂÓĞÈ¤¡£</p>
+					<span></span>
+					<div class="icons">
+						<a href="#"><span class="img1"> </span></a>
+						<a href="#"><span class="img2"> </span></a>
+						<a href="#"><span class="img3"> </span></a>
+				    </div>
+					<a class="date" href="#">2014Äê¡¢2015Äê</a>
+					<div class="caption">
+						<a href="#"><img src="./images/link.png" alt=""/></a>
+					</div>
+					<div class="dmnd"></div>				
+			 </div>
+		 </div>
+		 <div class="clearfix"></div>
+		 
+		 <div class="blog-top" id="bottom-sec">		 
+			 <div class="img-desc blog-sec" >
+				<h4>¡°ÓĞµ¯Ä»¡±PPT¹²ÏíÆ½Ì¨ÍøÕ¾</h4>
+				<span></span>
+				 <p>Õâ¸öÍøÕ¾¶ÔÎÒÀ´ËµÓÖÊÇÒ»¸öµÚÒ»£¬µÚÒ»¸öÎÒ´´½¨µÄÍøÕ¾£¬Ò²ÊÇÎÒµÚÒ»´ÎÓÃ´úÂë¸øÈËÃÇ´øÈ¥ÁËÄÇÃ´Ò»µãĞ¡Ğ¡µÄ°ïÖú£¬ÆäÖĞµ¯Ä»PPTµÄµã×ÓÊÇºÀ¸ç¸çÏë³öÀ´µÄ£¬ÎÒ¾õµÃÊ®·ÖÓĞÈ¤£¬Ïëµ½×Ô¼º»¹²»»á×öÍøÕ¾£¬±ãÏÂ¶¨¾öĞÄÒªÑ§Ï°²¢°ÑËü¿ª·¢³öÀ´</p>
+				 <span></span>
+				 <div class="icons">
+					 <a href="#"><span class="img1"> </span></a>
+					 <a href="#"><span class="img2"> </span></a>
+					 <a href="#"><span class="img3"> </span></a>
+				 </div>
+				  <a class="date" href="#">2015Äê</a>
+				   <div class="caption2">
+						<a href=""><img src="./images/link.png" alt=""/></a>
+					</div>
+					<div class="dmnd2"></div>	
+			 </div>
+			 <div class="blog-img img-sec">
+				<img src="./images/img3.jpg" alt="" class="img-responsive" />
+			 </div>		 
+		 </div>		 
+		 
+		 <div class="blog-top" id="bottom-sec">		 
+			 <div class="img-desc blog-sec" >
+				<h4>PS</h4>
+				<span></span>
+				 <p>PS×÷Í¼ÊÇÎÒÉÏ´óÑ§ÒÔÀ´×îÏ²»¶µÄÊÂÇé£¬ÎÒÉõÖÁÏë¹ıÒª²»ÒªÒÔºó´ÓÊÂÏà¹ØµÄ¹¤×÷£¬ºóÀ´ÎÒ¿´µ½ÁË¸ü´óµÄÊÀ½ç£¬ÎÒµÄÏë·¨¸Ä±äÁË£¬µ«ÊÇËüÈÔÈ»ÊÇÎÒ×öÏ²»¶×öµÄÊÂÇé£¬photoshoÈí¼ş¾ÍÏñÎÒµÄºÃ»ï°é¡£ÎûÎû~×î½üËµ²»¶¨ÒªµÃµ½Ò»¸öÊÖ»æ°åÁËÄØ(*^__^*) </p>
+				 <span></span>
+				<div class="icons">
+					 <a href="#"><span class="img1"> </span></a>
+					 <a href="#"><span class="img2"> </span></a>
+					 <a href="#"><span class="img3"> </span></a>
+				 </div>
+				  <a class="date" href="#">2013Äê¡¢2014Äê¡¢2015Äê</a>
+				   <div class="caption2">
+						<a href=""><img src="./images/link.png" alt=""/></a>
+					</div>
+					<div class="dmnd2"></div>	
+			 </div>
+			 <div class="blog-img img-sec">
+				<img src="./images/img4.jpg" alt="" class="img-responsive" />
+			 </div>		 
+		 </div>	
+		 <div class="clearfix"></div>
+			<div class="load"><a href="#">Load More</a></div>
+	 </div>
+</div>
+<!---->
+<div class="client" id="clients">
+		 <h3>°®ÎÒµÄÈËÓëÎÒ°®µÄÈË</h3>
+		 <small></small>
+		 <script>
+		// You can also use "$(window).load(function() {"
+		$(function () {
+		  // Slideshow 1
+		  $("#slider1").responsiveSlides({
+			 auto: true,
+			 nav: true,
+			 speed: 500,
+			 namespace: "callbacks",
+		  });
+		});
+	  </script>
+	  <div class="container2">
+			<div class="slider">
+				<ul class="rslides" id="slider1">
+				 <li>
+				 <div class="person1"></div>
+				 <div class="about-add-grid">
+				 <p>ºÀ¸ç¸çÊÇÎÒµÄÄĞÅóÓÑ£¬ËûÊÇÒ»¸öÉñÆæµÄÈË£¬ÎÒ²»»áµÄÊÂÇéËû¶¼»á×ö£¬Ëû»¹´øÎÒÈ¥¸÷µØÂÃÓÎºÍÆ·³¢ÃÀÊ³£¬ºÍËûÔÚÒ»ÆğµÄÊ±ºòÎÒÊÇ×îÇáËÉµÄ£¬ÎÒÏ£Íû¿ÉÒÔºÍËû·ç¾°¶¼¿´Í¸£¬×îºóÒ»Æğ¿´Ï¸Ë®³¤Á÷</p>
+				 </div>
+				 <div class="clearfix"></div>
+			  </li>	
+			  <li>
+				 <div class="person2"></div>
+				 <div class="about-add-grid">
+				 <p>ÀÑÀÑÊÇ¶ÔÎÒÓ°Ïì×î´óµÄÈË£¬´ÓĞ¡Ëı½ÌÓıÎÒ³¤´ó£¬ÎŞÂÛÎÒ³¢ÊÔÊ²Ã´£¬Ëı¶¼»áÖ§³ÖÎÒºÍÖ¸µ¼ÎÒ¡£ÎÒÏ£ÍûËıÉíÌå½¡¿µ£¬¿´µ½ÎÒ³É¹¦µÄÄÇÒ»Ìì¡£</p>
+				 </div>
+				 <div class="clearfix"></div>
+			  </li>	
+			 </ul>		
+			</div>
+	  </div>
+</div>
+<!---->
+<!--<div class="container">-->
+	 <!--<ul id="flexiselDemo1">-->
+			<!--<li>-->
+				<!--<div class="biseller-column">-->
+				<!--<img src="./images/s1.png" alt="">-->
+				<!--</div>-->
+			<!--</li>-->
+			<!--<li>-->
+				<!--<div class="biseller-column">-->
+				<!--<img src="./images/s2.png" alt="">-->
+				<!--</div>-->
+			<!--</li>-->
+			<!--<li>-->
+				<!--<div class="biseller-column">-->
+				<!--<img src="./images/s3.png" alt="">-->
+				<!--</div>-->
+			<!--</li>-->
+			<!--<li>-->
+				<!--<div class="biseller-column">-->
+				<!--<img src="./images/s2.png" alt="">-->
+				<!--</div>-->
+			<!--</li>-->
+			<!--<li>-->
+				<!--<div class="biseller-column">-->
+				<!--<img src="./images/s1.png" alt="">-->
+				<!--</div>-->
+			<!--</li>-->
+			<!--<li>-->
+				<!--<div class="biseller-column">-->
+				<!--<img src="./images/s3.png" alt="">-->
+				<!--</div>-->
+			<!--</li>-->
+		<!--</ul>-->
+		<!--<script type="text/javascript">-->
+		 <!--$(window).load(function() {-->
+			<!--$("#flexiselDemo1").flexisel({-->
+				<!--visibleItems: 3,-->
+				<!--animationSpeed: 1000,-->
+				<!--autoPlay: true,-->
+				<!--autoPlaySpeed: 3000,    		-->
+				<!--pauseOnHover: true,-->
+				<!--enableResponsiveBreakpoints: true,-->
+				<!--responsiveBreakpoints: { -->
+					<!--portrait: { -->
+						<!--changePoint:480,-->
+						<!--visibleItems: 1-->
+					<!--}, -->
+					<!--landscape: { -->
+						<!--changePoint:640,-->
+						<!--visibleItems: 2-->
+					<!--},-->
+					<!--tablet: { -->
+						<!--changePoint:768,-->
+						<!--visibleItems: 3-->
+					<!--}-->
+				<!--}-->
+			<!--});-->
+			<!-- -->
+		<!--});-->
+	   <!--</script>-->
+	   <script type="text/javascript" src="./js/jquery.flexisel.js"></script>	
+</div>   
+<!---->
+<div class="contact text-center" id="contact">
+	<h3>¸øÎÒÁôÑÔ</h3>
+	<i class="line"></i>
+	<form>
+	<input type="text" placeholder="Name" required/>
+	<input type="text" placeholder="E-mail" required/>
+	<textarea placeholder="Message"></textarea>
+	<input type="submit" value="SEND"/>
+	</form>
+</div>
+<!---->
+<div class="fotter">
+	 <div class="scale"></div>
+	 <a href=""><img src="./images/logo.png" alt="" height="45"/></a>
 </div>
 
-<script type="text/javascript">
-var offsetX = $("#loveHeart").width() / 2;
-var offsetY = $("#loveHeart").height() / 2 - 55;
-var together = new Date();
-together.setFullYear(2013, 6, 30);
-together.setHours(0);
-together.setMinutes(0);
-together.setSeconds(0);
-together.setMilliseconds(0);
-
-if (!document.createElement('canvas').getContext) {
-	var msg = document.createElement("div");
-	msg.id = "errorMsg";
-	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
-	document.body.appendChild(msg);
-	$("#code").css("display", "none")
-	$("#copyright").css("position", "absolute");
-	$("#copyright").css("bottom", "10px");
-	document.execCommand("stop");
-} else {
-	setTimeout(function () {
-		startHeartAnimation();
-	}, 5000);
-
-	timeElapse(together);
-	setInterval(function () {
-		timeElapse(together);
-	}, 500);
-
-	adjustCodePosition();
-	$("#code").typewriter();
-}
-</script>
+<!---->
+</section>	
+<!---->
 </body>
 </html>
