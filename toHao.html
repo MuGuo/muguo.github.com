@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>后援会表白</title>
+
+    <style type="text/css">
+        @font-face {
+            font-family: digit;
+            src: url('digital-7_mono.ttf') format("truetype");
+        }
+    </style>
+
+    <link href="css/default.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+
+</head>
+
+<body>
+
+<div id="mainDiv">
+    <div id="content">
+        <div id="code" class="comments">
+            <!--佛曰：“一花一世界，一木一浮生。”说是内心纯净的人能将这世界看得也如同花木一样美好简单，
+            以这句箴言来介绍我们的你绝不能算是过奖啊。你待人亲和大度，也不计较黑子恶言相对，一言一行谦逊有礼，
+            大抵是有颗宽容的心吧。君子藏器于身，待时而动。创下新纪录时，你像个孩子般雀跃兴奋，却依然没有得意炫耀，
+            反而继续投身于练习之中，这大概就是“持谦谨者成大器，怀天下者立远功”了。但不得不说，认真练习的你仿佛散发着光芒，
+            喧嚣嘈杂中，你孑然超群.看到你积极融入集体，所有兔r都明白你是为了中国战队。
+            你一个拥抱感动了多少颗心让多少双眼睛涌出泪花。我们都明白你的努力不是为了自己，或是他人口中的名誉。
+            你不在乎世界怎么看你，毕竟君子和而不同，小人同而不和。如果说每个人都是一个世界，
+            那这万千世界中唯有你是我眼中的独特。即使万物归于尘土、归于雨露，你走来的脚步也铿锵有力，掷地有声。
+            ——来自兔r的家书/走兔
+            16/03/10-->
+            佛曰：“一花一世界，一木一浮生。”<br />
+            说是内心纯净的人能将这世界看得也如同花木一样美好简单，<br />
+            以这句箴言来介绍我们的你绝不能算是过奖啊。<br />
+            你待人亲和大度，也不计较黑子恶言相对，<br />
+            一言一行谦逊有礼，大抵是有颗宽容的心吧。<br />
+            君子藏器于身，待时而动。<br />
+            创下新纪录时，你像个孩子般雀跃兴奋，却依然没有得意炫耀，<br />
+            反而继续投身于练习之中，<br />
+            这大概就是“持谦谨者成大器，怀天下者立远功”了。<br />
+            但不得不说，认真练习的你仿佛散发着光芒，<br />
+            喧嚣嘈杂中，你孑然超群。<br />
+            看到你积极融入集体，所有兔r都明白你是为了中国战队。<br />
+            你一个拥抱感动了多少颗心让多少双眼睛涌出泪花。<br />
+            我们都明白你的努力不是为了自己，或是他人口中的名誉。<br />
+            你不在乎世界怎么看你，毕竟君子和而不同，小人同而不和。<br />
+            如果说每个人都是一个世界，那这万千世界中唯有你是我眼中的独特。<br />
+            即使万物归于尘土、归于雨露，<br />
+            你走来的脚步也铿锵有力，掷地有声。<br />
+            <br>
+            <br>
+            文 走兔<br />
+            制作 燕燕牧牧<br />
+        </div>
+        <div id="loveHeart">
+            <canvas id="garden"></canvas>
+            <div id="words">
+                <div id="messages">
+                    我记着爱你的每一秒
+                    <div id="elapseClock"></div>
+                </div>
+                <div id="loveu">
+                    常来看看。<br><br>
+                    <div>from 王鹰豪粉丝后援会</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var offsetX = $("#loveHeart").width() / 2;
+    var offsetY = $("#loveHeart").height() / 2 - 55;
+    var together = new Date();
+    together.setFullYear(2016, 1, 2);
+    together.setHours(0);
+    together.setMinutes(0);
+    together.setSeconds(0);
+    together.setMilliseconds(0);
+
+    if (!document.createElement('canvas').getContext) {
+        var msg = document.createElement("div");
+        msg.id = "errorMsg";
+        msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+        document.body.appendChild(msg);
+        $("#code").css("display", "none")
+        $("#copyright").css("position", "absolute");
+        $("#copyright").css("bottom", "10px");
+        document.execCommand("stop");
+    } else {
+        setTimeout(function () {
+            startHeartAnimation();
+        }, 5000);
+
+        timeElapse(together);
+        setInterval(function () {
+            timeElapse(together);
+        }, 500);
+
+        adjustCodePosition();
+        $("#code").typewriter();
+    }
+</script>
+</body>
+</html>
